@@ -1,0 +1,52 @@
+<!DOCTYPE >
+<html>
+    <head>
+        <link href="https://unpkg.com/filepond@^4/dist/filepond.css" rel="stylesheet" />
+        <script src="https://unpkg.com/filepond@^4/dist/filepond.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+        <script src="https://unpkg.com/filepond-plugin-image-exif-orientation/dist/filepond-plugin-image-exif-orientation.js"></script>
+<script src="https://unpkg.com/filepond/dist/filepond.js"></script>
+<script src="https://unpkg.com/filepond-plugin-image-transform/dist/filepond-plugin-image-transform.js"></script>
+<script src="https://unpkg.com/filepond/dist/filepond.js"></script>
+<link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet" />
+<link
+    href="https://unpkg.com/filepond-plugin-image-edit/dist/filepond-plugin-image-edit.css"
+    rel="stylesheet"
+/>
+
+<!-- add before </body> -->
+<script src="https://unpkg.com/filepond-plugin-image-edit/dist/filepond-plugin-image-edit.js"></script>
+<script src="https://unpkg.com/filepond/dist/filepond.js"></script>
+<!-- include FilePond library --> <script src="https://unpkg.com/filepond/dist/filepond.min.js"></script>
+
+<!-- include FilePond plugins --> <script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.min.js"></script>
+
+<!-- include FilePond jQuery adapter --> <script src="https://unpkg.com/jquery-filepond/filepond.jquery.js"></script>
+
+    </head>
+    <body>
+
+        <!-- <input type="file" /> -->
+        <form action="/" method="post" enctype="multipart/form-data" >
+            <input type="file" name="filepond"  dropOnPage multiple dropOnElement files/>
+
+    
+        </form>
+
+<script>
+    
+
+    FilePond.registerPlugin(
+  FilePondPluginImagePreview,
+  
+  FilePondPluginFileValidateSize,
+  FilePondPluginImageEdit
+);
+    // Get a reference to the file input element
+    const inputElement = document.querySelector('input[type="file"]');
+    // Create a FilePond instance
+    const pond = FilePond.create(inputElement);
+</script>
+       
+    </body>
+</html>
